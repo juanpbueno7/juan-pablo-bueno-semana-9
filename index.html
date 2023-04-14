@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Aplicación</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./components/signup/signup.css" >
+  </head>
+  <body>
+    <div class="container">
+      <div id="app">
+        <header>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Mi Aplicación</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#" onclick="showLoginScreen()">Iniciar sesión</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="showCreateAccountScreen()">Crear cuenta</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="showLoggedInScreen()">Cerrar sesión</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+        <main>
+          <div class="jumbotron">
+            <h1 class="display-4">¡Bienvenido!</h1>
+            <hr class="my-4">
+            <p>Selecciona una opción en el menú de navegación para continuar.</p>
+          </div>
+
+          <div id="login-screen" style="display: none;">
+            <app-login></app-login>
+            
+          </div>
+
+          <div id="create-account-screen" style="display: none;">
+            <app-signup></app-signup>
+          </div>
+
+          <div id="logged-in-screen" style="display: none;">
+            <p id="logged-in-user"></p>
+            <button id="logout-button" class="btn btn-danger" onclick="logout()">Cerrar sesión</button>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Importar los web components -->
+    <script type="module" src="./components/login/login.js"></script>
+    <script type="module" src="./components/signup/signup.js"></script>
+
+    <!-- Importar el script principal -->
+    <script src="script.js"></script>
+  </body>
+</html>
